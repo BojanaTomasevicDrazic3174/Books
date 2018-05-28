@@ -1,0 +1,17 @@
+<div class="col-lg-12">
+  <table class="display" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Ime: </th>
+        <th>Prezime: </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let autor of autors">
+        <td>{{autor.NAME}}</td>
+        <td>{{ autor.SURNAME}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

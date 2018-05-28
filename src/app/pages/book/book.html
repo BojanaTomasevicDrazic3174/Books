@@ -1,0 +1,36 @@
+<div class="col-lg-12">
+  <table class="table display" cellspacing="0">
+    
+    <thead>
+      <h2 class="page-header"> Spisak knjiga</h2>
+      <tr>
+        <th>Ime: </th>
+          <th>ISBN: </th>
+            <th>Autor: </th>
+            <th>Izaberi: </th>
+      <th *ngIf="username == 'admin'">Obrisi: </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.NAME}}</td>
+          <td>{{book.ISBN}}</td>
+            <td>{{book.AUTOR_NAME}} {{ book.SURNAME}}</td>
+            <td>
+              <input type="radio" name="odabir" 
+              [value]="book?.ID" (click)="odaberiKnjigu(bo.value)" #bo>
+
+            </td>
+            <td *ngIf="username == 'admin'">
+              <button class="btn btn-danger btn-sm" (click)="deleteKnjiga(book);">X</button>
+       </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-lg-2 col-lg-offset-10">
+      <button class="btn btn-primary" (click)="naruciKnjigu()">Iznajmi knjigu</button>
+    </div>
+  </div>
+</div>

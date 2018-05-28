@@ -1,0 +1,24 @@
+<div class="col-lg-12">
+  <table class="display" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Broj porudzbine: </th>
+        <th>Ime knjige: </th>
+        <th>Obrisi</th>
+    
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let porudzbina of porudzbine; let i= index">
+        <td>{{ i + 1}}</td>
+        <td>{{ porudzbina.NAME }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm btn-danger"
+          (click)="obrisiPoridzbinu(porudzbina)">X</button>
+        </td>
+     
+      </tr>
+    </tbody>
+  </table>
+</div>
